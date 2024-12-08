@@ -9,7 +9,7 @@ const tripSchema = new mongoose.Schema({
     start: { type: Date, required: true },
     resort: { type: String, required: true },
     perPerson: { type: String, required: true },
-    image: { type: String, required: true },
+    image: { type: String},
     description: { type: String, required: true }
 
 });
