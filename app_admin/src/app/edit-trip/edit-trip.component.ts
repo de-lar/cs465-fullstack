@@ -26,7 +26,6 @@ export class EditTripComponent {
     ) {}
     
     ngOnInit(): void {
-      // Retrieve stashed trip ID
       let tripCode = localStorage.getItem("tripCode");
       if (!tripCode) {
         alert("Something went wrong, couldn’t find where I stashed tripCode!");
@@ -37,7 +36,6 @@ export class EditTripComponent {
       console.log('EditTripComponent::ngOnInit');
       console.log('tripCode: ' + tripCode);
     
-      // Initialize the form with default empty values
       this.editForm = this.formBuilder.group({
         _id: [],
         code: [tripCode, Validators.required],
@@ -50,13 +48,11 @@ export class EditTripComponent {
         description: ["", Validators.required]
       });
     
-      // Fetch the trip data
       this.tripDataService.getTrip(tripCode)
         .subscribe({
           next: (value: any) => {
             this.trip = value;
             if (Array.isArray(value) && value.length > 0) {
-              // Populate the form with the retrieved trip
               this.editForm.patchValue(value[0]);
               this.message = 'Trip: ' + tripCode + ' retrieved';
             } else {
