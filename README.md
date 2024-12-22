@@ -1,2 +1,2 @@
-# cs465-fullstack
-CS-465 Full Stack Development with MEAN
+## Architecture
+# The structure of the website uses Express HTML to integrate with the backend. JavaScript was used to enable user input and interactions and to make API requests to the website’s backend. The SPA uses the Angular framework where different features and services of the SPA are stored in their own individual components. The backend uses a NoSQL database due to its scalability and ability to adapt to the application during its development.
